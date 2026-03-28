@@ -334,7 +334,13 @@ export const settingsAPI = {
       const settings = JSON.parse(localStorage.getItem('lc_settings') || JSON.stringify(DEFAULT_SETTINGS));
       return { data: settings };
     }
-    return api.get('/settings');
+    try {
+      return await api.get('/settings');
+    } catch (err) {
+      // Fallback to defaults if backend unreachable (e.g., frontend-only deploy, no backend)
+      console.warn('Settings API unavailable, using defaults:', err.message);
+      return { data: DEFAULT_SETTINGS };
+    }
   },
   update: async (data) => {
     if (IS_DEMO) {
@@ -342,7 +348,14 @@ export const settingsAPI = {
       localStorage.setItem('lc_settings', JSON.stringify(data));
       return { data };
     }
-    return api.put('/settings', data);
+    try {
+      return await api.put('/settings', data);
+    } catch (err) {
+      // Silently fall back to local storage if backend unreachable
+      console.warn('Settings update failed, saving locally:', err.message);
+      localStorage.setItem('lc_settings', JSON.stringify(data));
+      return { data };
+    }
   },
 };
 
