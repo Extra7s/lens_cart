@@ -9,6 +9,7 @@ const authRoutes = require('./routes/auth');
 const productRoutes = require('./routes/products');
 const cartRoutes = require('./routes/cart');
 const wishlistRoutes = require('./routes/wishlist');
+const settingsRoutes = require('./routes/settings');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/wishlist', wishlistRoutes);
+app.use('/api/settings', settingsRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => res.json({ status: 'OK', message: 'LensCart API running' }));
