@@ -1,0 +1,10 @@
+const express = require('express');
+const router = express.Router();
+const { getAllCameras, getCameraById, createCamera, updateCamera, deleteCamera } = require('../controllers/productController');
+const { protect, adminOnly } = require('../middleware/auth');
+router.get('/', getAllCameras);
+router.get('/:id', getCameraById);
+router.post('/', protect, adminOnly, createCamera);
+router.put('/:id', protect, adminOnly, updateCamera);
+router.delete('/:id', protect, adminOnly, deleteCamera);
+module.exports = router;
