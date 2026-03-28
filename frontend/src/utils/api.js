@@ -1,10 +1,13 @@
 import axios from 'axios';
 import { MOCK_CAMERAS } from './mockData.js';
 
-const API_BASE = import.meta.env.VITE_API_URL || '/api';
+const VITE_API_URL = import.meta.env.VITE_API_URL;
 
 // Detect if running in demo mode (no backend)
-export const IS_DEMO = import.meta.env.VITE_DEMO_MODE === 'true' || !import.meta.env.VITE_API_URL;
+// Demo mode if: explicitly set OR VITE_API_URL is not configured
+export const IS_DEMO = import.meta.env.VITE_DEMO_MODE === 'true' || !VITE_API_URL;
+
+const API_BASE = IS_DEMO ? '' : (VITE_API_URL || '/api');
 
 const api = axios.create({ baseURL: API_BASE });
 
