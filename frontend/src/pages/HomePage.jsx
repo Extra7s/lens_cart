@@ -58,47 +58,48 @@ export default function HomePage() {
   const isFiltered = category !== 'All' || brand !== 'All' || search || sort;
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-skyblue">
       {/* Hero */}
       {!isFiltered && (
-        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden noise-overlay">
+        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
           {/* Background */}
-          <div className="absolute inset-0 bg-obsidian-950">
-            <img src="https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?w=1600&auto=format&fit=crop&q=60" alt="" className="w-full h-full object-cover opacity-20" />
-            <div className="absolute inset-0 bg-gradient-to-b from-obsidian-950/40 via-obsidian-950/60 to-obsidian-950" />
-          </div>
-
-          {/* Decorative lines */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-500/20 to-transparent" />
-            <div className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-500/10 to-transparent" />
-          </div>
+          <div className="absolute inset-0 bg-gradient-to-br from-skyblue via-pastelblue to-mint opacity-80"></div>
 
           <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-obsidian-800/60 backdrop-blur-sm border border-obsidian-700 px-4 py-1.5 mb-8">
-              <span className="w-1.5 h-1.5 bg-gold-500 rounded-full animate-pulse" />
-              <span className="text-xs font-mono text-obsidian-400 tracking-widest uppercase">New Arrivals for 2024</span>
+            {/* Mascot and Camera Illustration */}
+            <div className="flex items-center justify-center gap-6 mb-8 animate-fade-up">
+              <svg width="80" height="80" viewBox="0 0 32 32" className="text-lavender drop-shadow-lg animate-float">
+                <circle cx="16" cy="16" r="14" fill="currentColor" opacity="0.2"/>
+                <circle cx="12" cy="14" r="2" fill="currentColor"/>
+                <circle cx="20" cy="14" r="2" fill="currentColor"/>
+                <path d="M12 20 Q16 24 20 20" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <ellipse cx="16" cy="18" rx="1" ry="0.5" fill="currentColor"/>
+              </svg>
+              <svg width="60" height="60" viewBox="0 0 24 24" className="text-softpink drop-shadow-lg animate-float" style={{ animationDelay: '0.5s' }}>
+                <rect x="3" y="6" width="18" height="12" rx="2" ry="2" fill="none" stroke="currentColor" strokeWidth="2"/>
+                <circle cx="12" cy="13" r="3" fill="none" stroke="currentColor" strokeWidth="2"/>
+                <circle cx="19" cy="9" r="1.5" fill="currentColor"/>
+              </svg>
             </div>
-            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none mb-6">
-              <span className="text-obsidian-50">See the</span><br/>
-              <span className="text-gradient">World</span>
-              <span className="text-obsidian-50"> in Focus</span>
+
+            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none mb-6 bg-gradient-to-r from-lavender via-softpink to-lavender bg-clip-text text-transparent animate-fade-up">
+              DIGIPIXEL.NP
             </h1>
-            <p className="text-obsidian-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-              Professional cameras for photographers who refuse to compromise. From mirrorless to medium format — find your perfect tool.
+            <p className="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-up">
+              Capture every moment with creativity and precision. Premium cameras for photographers and dreamers.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button onClick={() => document.getElementById('shop').scrollIntoView({ behavior: 'smooth' })} className="btn-primary px-8 py-4 text-sm">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up">
+              <button onClick={() => document.getElementById('shop').scrollIntoView({ behavior: 'smooth' })} className="btn-primary px-8 py-4 text-sm shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
                 Shop Now
               </button>
-              <Link to="/?category=Mirrorless" className="btn-secondary px-8 py-4 text-sm">
+              <Link to="/?category=Mirrorless" className="btn-secondary px-8 py-4 text-sm shadow-md hover:shadow-lg transform hover:scale-105 transition-all">
                 View Mirrorless
               </Link>
             </div>
           </div>
 
           {/* Scroll indicator */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-obsidian-600 animate-bounce">
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600 animate-bounce">
             <span className="text-xs font-mono tracking-widest">SCROLL</span>
             <ChevronDown className="w-4 h-4" />
           </div>
@@ -110,8 +111,8 @@ export default function HomePage() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
           <div className="flex items-center justify-between mb-10">
             <div>
-              <p className="text-xs font-mono text-gold-500 tracking-widest uppercase mb-1">Handpicked Selection</p>
-              <h2 className="section-title">Featured Cameras</h2>
+              <p className="text-xs font-mono text-lavender tracking-widest uppercase mb-1">Handpicked Selection</p>
+              <h2 className="text-3xl font-bold text-gray-800">Featured Cameras</h2>
             </div>
             <Link to="/?sort=rating" className="btn-ghost hidden sm:block">View All →</Link>
           </div>
@@ -123,7 +124,7 @@ export default function HomePage() {
 
       {/* Category Strip */}
       {!isFiltered && (
-        <section className="border-y border-obsidian-800 bg-obsidian-900/50 py-8 overflow-x-auto">
+        <section className="border-y border-pastelblue bg-pastelblue/20 py-8 overflow-x-auto">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="flex gap-4 min-w-max">
               {categories.filter(c => c !== 'All').map(cat => {
@@ -138,11 +139,11 @@ export default function HomePage() {
                   }
                 };
                 return (
-                  <Link key={cat} to={`/?category=${cat}`} className="group flex flex-col items-center gap-2 px-6 py-3 border border-obsidian-700 hover:border-gold-500 transition-all duration-200 cursor-pointer hover:bg-gold-500/5">
-                    <div className="text-obsidian-400 group-hover:text-gold-400 transition-colors">
+                  <Link key={cat} to={`/?category=${cat}`} className="group flex flex-col items-center gap-2 px-6 py-3 border border-pastelblue hover:border-lavender transition-all duration-200 cursor-pointer hover:bg-lavender/10 rounded-xl">
+                    <div className="text-gray-600 group-hover:text-lavender transition-colors">
                       {getCategoryIcon()}
                     </div>
-                    <span className="text-xs font-mono text-obsidian-400 group-hover:text-gold-400 tracking-wider uppercase transition-colors">{cat}</span>
+                    <span className="text-xs font-mono text-gray-600 group-hover:text-lavender tracking-wider uppercase transition-colors">{cat}</span>
                   </Link>
                 );
               })}
@@ -158,23 +159,23 @@ export default function HomePage() {
           <div>
             {search ? (
               <div>
-                <p className="text-xs font-mono text-obsidian-500 uppercase tracking-widest mb-1">Search Results</p>
-                <h2 className="section-title text-2xl">"{search}"</h2>
+                <p className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-1">Search Results</p>
+                <h2 className="text-2xl font-bold text-gray-800">"{search}"</h2>
               </div>
             ) : (
               <div>
-                <p className="text-xs font-mono text-gold-500 uppercase tracking-widest mb-1">{category !== 'All' ? category : 'All Cameras'}</p>
-                <h2 className="section-title text-2xl">{category !== 'All' ? `${category} Cameras` : 'Our Collection'}</h2>
+                <p className="text-xs font-mono text-lavender uppercase tracking-widest mb-1">{category !== 'All' ? category : 'All Cameras'}</p>
+                <h2 className="text-2xl font-bold text-gray-800">{category !== 'All' ? `${category} Cameras` : 'Our Collection'}</h2>
               </div>
             )}
-            {!loading && <p className="text-obsidian-500 text-sm mt-1">{totalCount} {totalCount === 1 ? 'product' : 'products'} found</p>}
+            {!loading && <p className="text-gray-500 text-sm mt-1">{totalCount} {totalCount === 1 ? 'product' : 'products'} found</p>}
           </div>
 
           {/* Sort */}
           <select
             value={sort}
             onChange={(e) => setParam('sort', e.target.value)}
-            className="input w-full md:w-48 bg-obsidian-900"
+            className="input w-full md:w-48 bg-white"
           >
             {SORT_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
           </select>
@@ -186,12 +187,12 @@ export default function HomePage() {
             <div className="sticky top-24 space-y-6">
               {/* Category Filter */}
               <div>
-                <p className="text-xs font-mono text-obsidian-500 uppercase tracking-widest mb-3">Category</p>
+                <p className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-3">Category</p>
                 <div className="space-y-1">
                   {categories.map(cat => (
                     <button key={cat} onClick={() => setParam('category', cat)}
-                      className={`w-full text-left px-3 py-2 text-sm transition-all duration-150 border-l-2 ${
-                        category === cat ? 'border-gold-500 text-gold-400 bg-gold-500/5' : 'border-transparent text-obsidian-400 hover:text-obsidian-200 hover:border-obsidian-600'
+                      className={`w-full text-left px-3 py-2 text-sm transition-all duration-150 border-l-2 rounded-r-lg ${
+                        category === cat ? 'border-lavender text-lavender bg-lavender/10' : 'border-transparent text-gray-600 hover:text-lavender hover:border-pastelblue hover:bg-pastelblue/10'
                       }`}>
                       {cat}
                     </button>
@@ -201,12 +202,12 @@ export default function HomePage() {
 
               {/* Brand Filter */}
               <div>
-                <p className="text-xs font-mono text-obsidian-500 uppercase tracking-widest mb-3">Brand</p>
+                <p className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-3">Brand</p>
                 <div className="space-y-1">
                   {brands.map(b => (
                     <button key={b} onClick={() => setParam('brand', b)}
-                      className={`w-full text-left px-3 py-2 text-sm transition-all duration-150 border-l-2 ${
-                        brand === b ? 'border-gold-500 text-gold-400 bg-gold-500/5' : 'border-transparent text-obsidian-400 hover:text-obsidian-200 hover:border-obsidian-600'
+                      className={`w-full text-left px-3 py-2 text-sm transition-all duration-150 border-l-2 rounded-r-lg ${
+                        brand === b ? 'border-lavender text-lavender bg-lavender/10' : 'border-transparent text-gray-600 hover:text-lavender hover:border-pastelblue hover:bg-pastelblue/10'
                       }`}>
                       {b}
                     </button>
@@ -216,7 +217,7 @@ export default function HomePage() {
 
               {/* Reset */}
               {isFiltered && (
-                <button onClick={() => setSearchParams({})} className="w-full text-xs font-mono text-ember-400 hover:text-ember-300 border border-ember-500/30 hover:border-ember-500/60 py-2 transition-colors">
+                <button onClick={() => setSearchParams({})} className="w-full text-xs font-mono text-softpink hover:text-lavender border border-softpink/30 hover:border-softpink/60 py-2 transition-colors rounded-lg">
                   CLEAR FILTERS
                 </button>
               )}
@@ -231,11 +232,11 @@ export default function HomePage() {
               </div>
             ) : cameras.length === 0 ? (
               <div className="flex flex-col items-center justify-center py-24 text-center">
-                <div className="w-20 h-20 bg-obsidian-800 flex items-center justify-center mb-6">
-                  <svg className="w-10 h-10 text-obsidian-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <div className="w-20 h-20 bg-pastelblue flex items-center justify-center mb-6 rounded-full shadow-sm">
+                  <svg className="w-10 h-10 text-lavender" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 </div>
-                <h3 className="font-display text-xl text-obsidian-300 mb-2">No Cameras Found</h3>
-                <p className="text-obsidian-600 text-sm mb-6">Try adjusting your filters or search query</p>
+                <h3 className="font-display text-xl text-gray-700 mb-2">No Cameras Found</h3>
+                <p className="text-gray-500 text-sm mb-6">Try adjusting your filters or search query</p>
                 <button onClick={() => setSearchParams({})} className="btn-primary">Clear All Filters</button>
               </div>
             ) : (

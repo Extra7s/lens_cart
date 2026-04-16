@@ -7,52 +7,52 @@
   html { scroll-behavior: smooth; }
   body {
     font-family: 'DM Sans', system-ui, sans-serif;
-    background-color: #0d0d0d;
-    color: #e8e8e8;
+    background-color: #e0f2fe;
+    color: #2d3748;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; }
 
   ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #1a1a1a; }
-  ::-webkit-scrollbar-thumb { background: #3d3d3d; border-radius: 3px; }
-  ::-webkit-scrollbar-thumb:hover { background: #e8a900; }
+  ::-webkit-scrollbar-track { background: #f7fafc; }
+  ::-webkit-scrollbar-thumb { background: #cbd5e0; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #a0aec0; }
 
-  ::selection { background: rgba(232, 169, 0, 0.3); color: #fcd97a; }
+  ::selection { background: rgba(196, 138, 0, 0.3); color: #2d3748; }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-gold-500 hover:bg-gold-400 text-obsidian-950 font-semibold px-6 py-3 rounded-none 
+    @apply bg-lavender hover:bg-softpink text-white font-semibold px-6 py-3 rounded-full 
            transition-all duration-200 tracking-wide uppercase text-sm
-           hover:shadow-[0_0_24px_rgba(232,169,0,0.4)] active:scale-95;
+           hover:shadow-lg active:scale-95;
   }
   .btn-secondary {
-    @apply border border-obsidian-600 hover:border-gold-500 text-obsidian-200 hover:text-gold-400 
-           px-6 py-3 rounded-none transition-all duration-200 tracking-wide uppercase text-sm
-           hover:bg-gold-500/5 active:scale-95;
+    @apply border border-lavender hover:border-softpink text-lavender hover:text-softpink 
+           px-6 py-3 rounded-full transition-all duration-200 tracking-wide uppercase text-sm
+           hover:bg-softpink/10 active:scale-95;
   }
   .btn-ghost {
-    @apply text-obsidian-300 hover:text-gold-400 transition-colors duration-200 text-sm font-medium;
+    @apply text-lavender hover:text-softpink transition-colors duration-200 text-sm font-medium;
   }
   .card {
-    @apply bg-obsidian-800 border border-obsidian-700 hover:border-obsidian-500 
-           transition-all duration-300 rounded-none overflow-hidden;
+    @apply bg-white border border-pastelblue hover:border-lavender 
+           transition-all duration-300 rounded-xl overflow-hidden shadow-sm hover:shadow-md;
   }
   .input {
-    @apply w-full bg-obsidian-900 border border-obsidian-700 focus:border-gold-500 
-           text-obsidian-100 placeholder-obsidian-500 px-4 py-3 rounded-none 
+    @apply w-full bg-white border border-pastelblue focus:border-lavender 
+           text-gray-800 placeholder-gray-400 px-4 py-3 rounded-xl 
            outline-none transition-colors duration-200 text-sm font-body;
   }
   .badge {
     @apply text-xs font-mono font-medium px-2 py-0.5 tracking-wider uppercase;
   }
   .section-title {
-    @apply font-display text-3xl md:text-4xl font-bold text-obsidian-50 leading-tight;
+    @apply font-display text-3xl md:text-4xl font-bold text-gray-800 leading-tight;
   }
   .divider {
-    @apply border-t border-obsidian-800;
+    @apply border-t border-pastelblue;
   }
 }
 

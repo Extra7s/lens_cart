@@ -9,7 +9,11 @@ export default {
         mono: ['JetBrains Mono', 'monospace'],
       },
       colors: {
-        obsidian: { 50: '#f5f5f5', 100: '#e8e8e8', 200: '#d1d1d1', 300: '#a8a8a8', 400: '#737373', 500: '#525252', 600: '#3d3d3d', 700: '#2a2a2a', 800: '#1a1a1a', 900: '#0d0d0d', 950: '#050505' },
+        skyblue: '#e0f2fe',
+        pastelblue: '#a7c7e7',
+        softpink: '#f8b8c4',
+        lavender: '#c3b1e1',
+        mint: '#b8e6d4',
         gold: { 300: '#fcd97a', 400: '#f8c840', 500: '#e8a900', 600: '#c48a00' },
         ember: { 400: '#ff6b35', 500: '#e85520', 600: '#c73e0d' },
       },
@@ -19,12 +23,14 @@ export default {
         'slide-in': 'slideIn 0.3s ease forwards',
         'shimmer': 'shimmer 1.5s infinite',
         'pulse-slow': 'pulse 3s infinite',
+        'float': 'float 3s ease-in-out infinite',
       },
       keyframes: {
         fadeUp: { from: { opacity: 0, transform: 'translateY(24px)' }, to: { opacity: 1, transform: 'translateY(0)' } },
         fadeIn: { from: { opacity: 0 }, to: { opacity: 1 } },
         slideIn: { from: { transform: 'translateX(100%)' }, to: { transform: 'translateX(0)' } },
         shimmer: { '0%': { backgroundPosition: '-200% 0' }, '100%': { backgroundPosition: '200% 0' } },
+        float: { '0%, 100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-10px)' } },
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
