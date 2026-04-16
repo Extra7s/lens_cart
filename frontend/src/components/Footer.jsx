@@ -1,4 +1,5 @@
 import { faFacebook, faInstagram, faTelegram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -73,7 +74,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-pastelblue">
           <div className="bg-pastelblue/50 border border-lavender/20 rounded-lg p-4 mb-8">
-            <p className="text-xs text-lavender font-semibold mb-2">⚠️ DISCLAIMER:</p>
+            <p className="text-xs text-lavender font-semibold mb-2 flex items-center gap-2"><FontAwesomeIcon icon={faExclamationTriangle} className="text-softpink" /> DISCLAIMER:</p>
             <p className="text-xs text-gray-600">This website is for VIEWING PURPOSE ONLY and is NOT a dedicated ecommerce platform for purchasing products online. All orders placed through this platform require manual verification and confirmation from our team via social media contact. This is NOT an automated purchase system.</p>
           </div>
 
